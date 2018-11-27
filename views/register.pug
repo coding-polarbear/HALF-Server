@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    h1= "회원가입"
+    form(action='/users/register', method='post')
+        input#id(type='text', name='id')
+        label(for='id') 아이디
+        input#email(type='text', name='email')
+        label(for='email') 이메일
+        input#name(type='text', name='name')
+        label(for='name')
