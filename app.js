@@ -9,6 +9,15 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+//mongoose setting
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/half');
+var db = mongoose.connection;
+db.on('error', console.error)
+    .once('open',() => {
+        console.log('Connect to mongodb server');
+    });
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
